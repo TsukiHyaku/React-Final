@@ -1,4 +1,6 @@
 import React from 'react'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {faCartShopping}  from "@fortawesome/free-solid-svg-icons";
 
 function NavBar() {
   return (
@@ -28,12 +30,16 @@ function NavBar() {
         <li className="nav-item">
         <a className="nav-link" href="#">Contactanos</a>
         </li>
+        <li>
+        </li>
       </ul>
+
       <form className="d-flex" role="search">
         <input className="form-control me-2" type="search" placeholder="Buscar Articulo" aria-label="Search"/>
         <button className="btn btn-outline-success" type="submit">Buscar</button>
-      </form>
+      </form> 
     </div>
+    <FontAwesomeIcon  icon={faCartShopping} />
   </div>
 </nav>
   )
