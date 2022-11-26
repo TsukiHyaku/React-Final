@@ -39,8 +39,9 @@ function NavBar() {
         <button className="btn btn-outline-success" type="submit">Buscar</button>
       </form> 
     </div>
-    <FontAwesomeIcon  icon={faCartShopping} />
-  </div>
+
+  </div>    
+  <FontAwesomeIcon   icon={faCartShopping}  className="m-2 btn" />
 </nav>
   )
 }
