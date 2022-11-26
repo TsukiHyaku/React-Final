@@ -1,15 +1,10 @@
 import React from 'react'
 
-function ItemListContainer(props) {
+const ItemListContainer = ( {greeting} ) => {
   return (
-    <div className="card" style="width: 5rem;">
-  <img src="..." className="card-img-top" alt="..."/>
-  <div className="card-body">
-    <h5 className="card-title"></h5>
-    <p className="card-text"></p>
-    <a href="#" className="btn btn-primary"></a>
-  </div>
-</div>
+    <div>
+      <h2>{greeting} </h2>
+    </div>
   )
 }
 
