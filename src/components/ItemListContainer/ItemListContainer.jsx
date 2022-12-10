@@ -1,17 +1,27 @@
 import React, { useState, useEffect } from "react";
-import getItems from "../../services/mockService";
+// 1. importar la Promise
+import getItems, { getItemsCategory } from "../../services/mockService";
 import ItemList from "./ItemList";
+import { useParams } from "react-router-dom";
 
 function ItemListContainer() {
-  console.log("%cRender/update", "color: green");
-
   const [products, setProducts] = useState([]);
+  const categoryID = useParams().categoryID;
 
   useEffect(() => {
-    getItems().then((respuesta) => setProducts(respuesta));
-  }, []);
+    if (categoryID === undefined) {
+      getItems().then((respuesta) => {
+        setProducts(respuesta);
+      });
+    } else {
+      getItemsCategory(categoryID).then((respuestaFiltrada) =>
+        setProducts(respuestaFiltrada)
+      );
+    }
+  }, [categoryID]);
 
   return <ItemList products={products} />;
 }
 
 export default ItemListContainer;
+  
