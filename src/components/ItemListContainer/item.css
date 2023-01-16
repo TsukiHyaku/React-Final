@@ -12,6 +12,9 @@
   transition: all 0.20s ease-in;
   cursor: pointer;
 }
+.link-item{
+  text-decoration: none;
+}
 .card-img{
   width: 280px;
   height: 260px;

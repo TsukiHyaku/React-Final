@@ -7,9 +7,10 @@ function Item(props) {
   let urlDetail = `/item/${props.id}`;
 
   return (
-    <Link to={urlDetail}>
+
       <div className="card">
         <ToggleButton icon="♥" />
+        <Link to={urlDetail} className="link-item">
         <div className="card-img">
           <img src={props.img} alt="imagen producto"></img>
         </div>
@@ -18,8 +19,9 @@ function Item(props) {
           <h4 className="priceTag">$ {props.price}</h4>
           <small>{props.description}</small>
         </div>
+        </Link>
       </div>
-    </Link>
+
   );
 }
 

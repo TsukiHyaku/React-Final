@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
+import CartWidget from "./CartWidget";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {faCartShopping}  from "@fortawesome/free-solid-svg-icons";
 
@@ -40,8 +41,8 @@ function NavBar() {
         <button className="btn btn-outline-success" type="submit">Buscar</button>
       </form> 
     </div>
-
   </div>    
+  <CartWidget/>
   <FontAwesomeIcon   icon={faCartShopping}  className="m-2 btn" />
 </nav>
   )

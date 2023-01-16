@@ -1,17 +1,17 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 function ToggleButton(props) {
-  const [isFavorite, setIsFavorite] = useState(false);
+  const [isActive, setIsActive] = useState(false);
 
-  function handleFavorite() {
-    isFavorite === true ? setIsFavorite(false) : setIsFavorite(true);
+  function handleClick(evt) {    
+    evt.preventDefault();
+    setIsActive(!isActive);
   }
-  
+
+  let classNameButton = isActive ? "card-favicon d-flex justify-content-center align-items-center favorite" : "card-favicon d-flex justify-content-center align-items-center";
+
   return (
-    <button
-      onClick={handleFavorite}
-      className={isFavorite ? "card-favicon favorite" : "card-favicon"}
-    >
+    <button className={classNameButton} onClick={handleClick}>
       {props.icon}
     </button>
   );
