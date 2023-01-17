@@ -1,7 +1,7 @@
 import React from "react";
 import Flex from "../Flex/Flex";
 import Item from "./Item";
-
+import "./itemlist.css";
 
 function ItemList(props) {
   return (
@@ -15,6 +15,8 @@ function ItemList(props) {
             img={product.img}
             price={product.price}
             description={product.description}
+            newProduct={product.newProduct}
+            discount={product.discount}
           />
         ))}
       </Flex>

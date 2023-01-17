@@ -66,7 +66,7 @@ const products = [
     stock: 20,
     category: "buzo",
     img: "https://http2.mlstatic.com/D_NQ_NP_960184-MLA50941468734_072022-W.webp",
-    description: "esto es un manga",
+    description: "esto es un buzo",
   },
 
   {
@@ -76,7 +76,7 @@ const products = [
     stock: 32,
     category: "buzo",
     img: "https://http2.mlstatic.com/D_NQ_NP_614425-MLA49856617783_052022-W.webp",
-    description: "esto es un manga",
+    description: "esto es un buzo",
   },
 
   {
@@ -86,7 +86,8 @@ const products = [
     stock: 7,
     category: "buzo",
     img: "https://http2.mlstatic.com/D_NQ_NP_604160-MLA49745966759_042022-W.webp",
-    description: "esto es un manga",
+    description: "esto es un buzo",
+    discount: 20,
   },
 
   {
@@ -97,6 +98,7 @@ const products = [
     category: "figura",
     img: "https://criticalhit.com.au/wp-content/uploads/2021/05/000942706_06-200x281.jpg",
     description: "esto es un Figura",
+  
   },
 
   {
