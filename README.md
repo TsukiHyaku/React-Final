@@ -1,70 +1,25 @@
-# Getting Started with Create React App
+# 📚TuMangaShop📚
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[![N|Solid](data:image/png;base64,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)](https://nodesource.com/products/nsolid)
 
-## Available Scripts
+[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
 
-In the project directory, you can run:
+## App desarrollada para el Curso de ReactJs de la Plataforma CoderHouse
 
-### `npm start`
+- Ecommerce desarrollado con React
+- Estilos con Material UI
+- ✨Magic and Relaxing✨
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Como Clonar Repositorio
+- Git Clone
+- npm install
+- npm run start
+- npm i bootstrap
+- npm i font-awesome
+- npm install firebase
+- npm install sweetalert
+- npm install @uiball/loaders
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## ¿De que Trata este Proyecto?
+Este proyecto surgió a base del comienzo en la carrera de Desarrollo Web, Este Proyecto Trata sobre una Tienda de articulos de Anime/Manga/Ciencia Ficcion/Frikis la Idea parte a base de un pequeño emprendimiento entre amigos
