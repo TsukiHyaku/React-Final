@@ -6,7 +6,6 @@ function CartWidget() {
   const valueContext = useContext(cartContext);
   const totalItems = valueContext.totalItemsInCartfn();
 
-  //2. Rendering condicional con operadores lógicos -> &&
   return (
     <div>
       <span>🛒</span>
