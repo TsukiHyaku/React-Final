@@ -24,6 +24,7 @@ function CheckoutForm({ onCheckout }) {
       email: "",
       phone: "",
     });
+    
     onCheckout(buyerData);
   }
 
@@ -50,7 +51,7 @@ function CheckoutForm({ onCheckout }) {
           onChange={handleInputChange}
         />
 
-        <button onClick={onSubmit}>Crear orden</button>
+        <button onClick={onSubmit }>Crear orden</button>
       </form>
     </div>
   );

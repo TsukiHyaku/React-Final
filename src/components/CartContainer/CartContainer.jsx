@@ -13,15 +13,17 @@ import CheckoutForm from "./CheckoutForm";
 
 
 function CartContainer( ) {
+  
   const [order, setOrder] = useState(false);
   const [compra, setCompra] = useState (false)
-
+  let dirigirTo = useNavigate ()
   function cargaCheck(  ) {
     setCompra ( !compra )
   }
 
 
   const { cart , deleteCart} = useContext(cartContext);
+
 
   function handleCheckout(buyerData) {
     const order = {
@@ -34,6 +36,7 @@ function CartContainer( ) {
 
     createBuyOrder_WithStockControl(order).then((id) => {
       setOrder(id);
+      deleteCart (  )
     });
   }
 
@@ -47,7 +50,8 @@ function CartContainer( ) {
     );
 
   return (
-    <>
+    <> 
+    {cart.length > 0 ? <> 
       <h1>Tu Carrito</h1>
 
       <table className="cartList">
@@ -78,11 +82,18 @@ function CartContainer( ) {
       <div className="cartList_detail">
         <h4>El total de tu compra es de $ { } </h4>
         {compra ?
-          <CheckoutForm onCheckout={handleCheckout} /> :
-          <button onClick={ ( ) => cargaCheck( ) }>Terminar Compra</button>
+          <CheckoutForm onCheckout={handleCheckout} /> : <>
+          <button onClick={ ( ) => deleteCart( ) }>Vaciar Carrito</button>
+          <button onClick={ ( ) => cargaCheck( )  } >Terminar Compra</button>
+          </>
       }
-              <button onClick={ ( ) => deleteCart( ) }>Vaciar Carrito</button>
       </div>
+      </>   :
+      <>
+      <h1>Su carrito esta vacio</h1>
+      <button onClick={ ( ) => dirigirTo("/home")}>Seguir Comprando</button>
+      </>
+    }
     </>
   );
 }
