@@ -10,6 +10,8 @@ import "./cart.css";
 import { useNavigate } from "react-router-dom";
 import CheckoutForm from "./CheckoutForm";
 
+
+
 function CartContainer() {
   const [order, setOrder] = useState(false);
 
@@ -49,7 +51,6 @@ function CartContainer() {
             <th>Titulo</th>
             <th>Precio</th>
             <th>Cantidad</th>
-            <th>Remover</th>
             <th>Total</th>
           </tr>
         </thead>
@@ -62,11 +63,6 @@ function CartContainer() {
               <td>{item.title}</td>
               <td>$ {item.price}</td>
               <td>{item.count}</td>
-              <td>
-                <Button color="#c63224" onClick={item.removeItem}>
-                  X
-                </Button>
-              </td>
               <th>$ --,--</th>
             </tr>
           ))}
@@ -81,5 +77,6 @@ function CartContainer() {
     </>
   );
 }
+
 
 export default CartContainer;

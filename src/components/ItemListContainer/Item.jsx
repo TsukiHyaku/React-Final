@@ -10,7 +10,7 @@ function Item(props) {
   let classNameItem = `card ${props.newProduct ? "item-new" : ""}`;
 
   return (
-    <Link to={urlDetail}>
+    <Link to={urlDetail} className="link-item">
       <div className={classNameItem}>
         <ToggleButton icon="♥" />
         <div className="card-img">

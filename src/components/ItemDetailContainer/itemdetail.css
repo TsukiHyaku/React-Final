@@ -1,3 +1,7 @@
+.link-cart{
+  text-decoration: none;
+}
+
 .card-detail_img{
   height: 310px;
   object-fit: cover;

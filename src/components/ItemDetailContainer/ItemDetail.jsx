@@ -21,12 +21,18 @@ function ItemDetail({Item}) {
                 <img src={Item.img} alt={Item.title} />
             </div>
             <div className="card-detail_detail">
-            <h1>{Item.title}</h1>
-            <h4 className="priceTag">$ {Item.price}</h4>
-            <p>{Item.description}</p>
+                <h1>{Item.title}</h1>
+                <h4 className="priceTag">$ {Item.price}</h4>
+                <p>{Item.description}</p>
         </div>
-        <Link to="/cart">Ir al carrito</Link>
-        <ItemCount  stock={Item.stock} onAddToCart={handleAddToCart}/>
+        <>
+        {
+            countInCart >  0 ?
+            <Link to="/cart" className="link-cart">Ir al carrito</Link>
+            :
+            <ItemCount  stock={Item.stock} onAddToCart={handleAddToCart}/>
+        }
+        </>
         </div>
     );
 }
