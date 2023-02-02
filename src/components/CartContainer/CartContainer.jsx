@@ -12,10 +12,16 @@ import CheckoutForm from "./CheckoutForm";
 
 
 
-function CartContainer() {
+function CartContainer( ) {
   const [order, setOrder] = useState(false);
+  const [compra, setCompra] = useState (false)
 
-  const { cart } = useContext(cartContext);
+  function cargaCheck(  ) {
+    setCompra ( !compra )
+  }
+
+
+  const { cart , deleteCart} = useContext(cartContext);
 
   function handleCheckout(buyerData) {
     const order = {
@@ -46,7 +52,7 @@ function CartContainer() {
 
       <table className="cartList">
         <thead className="cartList_head">
-          <tr className="cartList_row">
+        <tr className="cartList_row">
             <th>Miniatura</th>
             <th>Titulo</th>
             <th>Precio</th>
@@ -63,16 +69,19 @@ function CartContainer() {
               <td>{item.title}</td>
               <td>$ {item.price}</td>
               <td>{item.count}</td>
-              <th>$ --,--</th>
+              <th> ${item.count * item.price} </th>
             </tr>
           ))}
         </tbody>
       </table>
 
       <div className="cartList_detail">
-        <h4>El total de tu compra es de $ --,--</h4>
-
-        <CheckoutForm onCheckout={handleCheckout} />
+        <h4>El total de tu compra es de $ { } </h4>
+        {compra ?
+          <CheckoutForm onCheckout={handleCheckout} /> :
+          <button onClick={ ( ) => cargaCheck( ) }>Terminar Compra</button>
+      }
+              <button onClick={ ( ) => deleteCart( ) }>Vaciar Carrito</button>
       </div>
     </>
   );

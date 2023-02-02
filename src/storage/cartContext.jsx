@@ -1,13 +1,13 @@
 import { createContext, useState } from "react";
 
-const cartContext = createContext({ cart: [] });
+const cartContext = createContext({ cart: [ ] });
 
 const Provider = cartContext.Provider;
 
 function CartContextProvider(props){
+    const [cart, setCart] = useState(   [  ]    );
 
-    const [cart, setCart] = useState([]);
-
+    
 
     function addToCart(item,count){
         let indexItemInCart = cart.findIndex( itemInContext => itemInContext.id === item.id )   
@@ -19,10 +19,15 @@ function CartContextProvider(props){
             setCart(newCart)
         }
         else {
-
             newCart.push( {...item, count: count})        
             setCart(newCart);
         }
+    }
+
+    function deleteCart (   ) {
+        return (
+            setCart( [  ])
+        )
     }
 
     let totalItemsInCart = 0;
@@ -39,7 +44,8 @@ function CartContextProvider(props){
             cart, 
             addToCart,
             totalItemsInCart,
-            totalItemsInCartfn
+            totalItemsInCartfn,
+            deleteCart
             }}>
             {props.children}
         </Provider>
