@@ -22,7 +22,7 @@ function CartContainer( ) {
   }
 
 
-  const { cart , deleteCart} = useContext(cartContext);
+  const { cart , deleteCart, totalCarrito} = useContext(cartContext);
 
 
   function handleCheckout(buyerData) {
@@ -80,7 +80,7 @@ function CartContainer( ) {
       </table>
 
       <div className="cartList_detail">
-        <h4>El total de tu compra es de $ { } </h4>
+        <h4>El total de tu compra es de $ { totalCarrito (  )} </h4>
         {compra ?
           <CheckoutForm onCheckout={handleCheckout} /> : <>
           <button onClick={ ( ) => deleteCart( ) }>Vaciar Carrito</button>

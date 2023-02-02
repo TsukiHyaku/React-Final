@@ -24,6 +24,11 @@ function CartContextProvider(props){
         }
     }
 
+    function totalCarrito () {
+        return (cart.reduce((acc, item)=> acc + item.count * item.price, 0))
+    }
+
+
     function deleteCart (   ) {
         return (
             setCart( [  ])
@@ -45,7 +50,8 @@ function CartContextProvider(props){
             addToCart,
             totalItemsInCart,
             totalItemsInCartfn,
-            deleteCart
+            deleteCart,
+            totalCarrito
             }}>
             {props.children}
         </Provider>
