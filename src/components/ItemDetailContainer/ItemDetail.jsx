@@ -26,7 +26,7 @@ function ItemDetail({Item}) {
             <p>{Item.description}</p>
         </div>
         <Link to="/cart">Ir al carrito</Link>
-        <ItemCount onAddToCart={handleAddToCart}/>
+        <ItemCount  stock={Item.stock} onAddToCart={handleAddToCart}/>
         </div>
     );
 }
